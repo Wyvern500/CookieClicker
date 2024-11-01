@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxu6bktlktlfg"]
+
+[ext_resource type="Script" path="res://Scripts/upgrade_gui.gd" id="1_v6s1s"]
+
+[node name="UpgradeGui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6s1s")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 654.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -32.0
+offset_right = 95.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cookies" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Cookies"]
+layout_mode = 2
+text = "Cookies: "
+
+[node name="Value" type="Label" parent="Panel/VBoxContainer/Cookies"]
+layout_mode = 2
+text = "0"
+
+[node name="CollectionAmount" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/CollectionAmount"]
+layout_mode = 2
+text = "Collection Amount: "
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/CollectionAmount"]
+layout_mode = 2
+text = "50"
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

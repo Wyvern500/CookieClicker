@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://rsm14rscc4eg"]
+
+[ext_resource type="Texture2D" uid="uid://b6xow3utolcuf" path="res://Assets/Textures/Cookie.png" id="1_h7w3u"]
+
+[sub_resource type="Curve" id="Curve_dosv7"]
+_data = [Vector2(0.00381678, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00377357), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_h7w3u")
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_curve = SubResource("Curve_dosv7")
